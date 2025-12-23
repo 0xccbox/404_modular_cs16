@@ -1,0 +1,26 @@
+# Compiled plugins (can be recompiled)
+*.amxx
+
+# Logs
+*.log
+logs/
+
+# Debug files
+*.asm
+
+# Temporary files
+*.bak
+*.tmp
+~*
+
+# IDE files
+.vs/
+.vscode/
+*.suo
+*.user
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
