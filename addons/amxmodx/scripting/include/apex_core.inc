@@ -5,7 +5,7 @@
 
 /**
  * ============================================================================
- * APEX CORE API - v4.0
+ * APEX CORE API - v4.1
  * ============================================================================
  * Include this file in your plugins to access Apex Core natives.
  * ============================================================================
@@ -21,21 +21,39 @@
 native bool:apex_check_access(id, const permission[]);
 
 /**
- * Get player's Bits (currency).
+ * Get player's Bits (integer, rounded).
+ * Use apex_get_bits_float() for precise value.
  * 
  * @param id    Player index
- * @return      Number of bits
+ * @return      Number of bits (rounded to integer)
  */
 native apex_get_bits(id);
 
 /**
- * Set player's Bits (currency).
+ * Get player's Bits as Float (precise value).
  * 
  * @param id    Player index
- * @param bits  New bits value
- * @return      1 on success, 0 if player not connected
+ * @return      Number of bits (Float)
+ */
+native Float:apex_get_bits_float(id);
+
+/**
+ * Set player's Bits.
+ * 
+ * @param id    Player index
+ * @param bits  New bits value (integer)
+ * @return      1 on success
  */
 native apex_set_bits(id, bits);
+
+/**
+ * Add (or subtract) Bits to player.
+ * 
+ * @param id        Player index
+ * @param amount    Amount to add (can be negative)
+ * @return          1 on success
+ */
+native apex_add_bits(id, Float:amount);
 
 /**
  * Get player's Reputation (social score).
@@ -50,7 +68,7 @@ native apex_get_reputation(id);
  * 
  * @param id            Player index
  * @param reputation    New reputation value
- * @return              1 on success, 0 if player not connected
+ * @return              1 on success
  */
 native apex_set_reputation(id, reputation);
 
